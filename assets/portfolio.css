@@ -94,3 +94,10 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .intro-list ol { grid-auto-flow: column; grid-auto-columns: 240px; overflow-x: auto; }
   .intro-head { flex-wrap: wrap; }
 }
+
+/* 카드 아래 바로가기 링크 (각각 새 창으로 열림) */
+.intro-list li { display: grid; gap: 4px; }
+.card-links { margin: 0; display: flex; gap: 4px; padding-left: 4px; }
+.card-links a { flex: 1; text-align: center; font-size: 11.5px; color: var(--mute); text-decoration: none; border: 1px solid var(--line); border-radius: 6px; padding: 4px 0; }
+.card-links a:hover { color: var(--ink); border-color: var(--accent); }
+.card-status, .pending, .pending-badge { display: none; }

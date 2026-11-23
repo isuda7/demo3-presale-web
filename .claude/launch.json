@@ -1,6 +1,14 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "demo3-dev", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 5200 }
+    {
+      "name": "static-preview",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "-e",
+        "const h=require('http'),f=require('fs'),p=require('path');const R='/Users/jochangi/Desktop/Workspaces/Ucomp/Pilot/demo3-presale-web';const T={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.jpg':'image/jpeg','.png':'image/png','.gif':'image/gif','.svg':'image/svg+xml','.json':'application/json'};h.createServer((q,s)=>{let u=decodeURIComponent(q.url.split('?')[0]);if(u.endsWith('/'))u+='index.html';const fp=p.join(R,u);if(!fp.startsWith(R)){s.writeHead(403);return s.end()}f.readFile(fp,(e,d)=>{if(e){s.writeHead(404);return s.end('not found')}s.writeHead(200,{'Content-Type':T[p.extname(fp)]||'application/octet-stream'});s.end(d)})}).listen(process.env.PORT||5330)"
+      ],
+      "port": 5330
+    }
   ]
 }

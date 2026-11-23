@@ -4,30 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex" />
-  <title>분양사이트 포트폴리오 · DEMO3</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <title>분양사이트 포트폴리오</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="/src/intro.css" />
+  <link rel="stylesheet" href="assets/portfolio.css" />
 </head>
 <body>
   <div class="intro">
     <header class="intro-head">
       <div class="intro-brand">
-        <span class="intro-mark">D3</span>
+        <span class="intro-mark">P</span>
         <div>
           <strong>분양사이트 포트폴리오</strong>
-          <small>카탈로그 기반 현장 사이트 · <span id="count"></span></small>
+          <small>카탈로그 기반 분양사이트 퍼블리싱 · <span id="count"></span></small>
         </div>
       </div>
       <div class="intro-tools" role="toolbar" aria-label="보기 설정">
         <div class="seg" role="tablist" aria-label="보기 대상" id="viewSeg">
-          <button role="tab" data-view="site" aria-selected="true">분양사이트</button>
-          <button role="tab" data-view="apply" aria-selected="false">분양신청</button>
-          <button role="tab" data-view="catalog" aria-selected="false">카탈로그 원본</button>
+          <button type="button" role="tab" data-view="site" aria-selected="true">분양사이트</button>
+          <button type="button" role="tab" data-view="apply" aria-selected="false">분양신청</button>
+          <button type="button" role="tab" data-view="catalog" aria-selected="false">카탈로그 원본</button>
         </div>
         <div class="seg" role="tablist" aria-label="화면 크기" id="deviceSeg">
-          <button role="tab" data-device="pc" aria-selected="true">PC</button>
-          <button role="tab" data-device="mobile" aria-selected="false">모바일</button>
+          <button type="button" role="tab" data-device="pc" aria-selected="true">PC</button>
+          <button type="button" role="tab" data-device="mobile" aria-selected="false">모바일</button>
         </div>
         <button class="btn-open" id="openNew" type="button">
           <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 3h6v6M17 3l-8 8M8 4H4v12h12v-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
@@ -36,29 +35,24 @@
       </div>
     </header>
 
-    <aside class="intro-list" aria-label="카탈로그 목록">
+    <aside class="intro-list" aria-label="분양사이트 목록">
       <ol id="list"></ol>
     </aside>
 
     <main class="intro-stage">
       <div class="stage-bar">
-        <button class="nav-btn" id="prev" type="button" aria-label="이전 카탈로그">‹</button>
+        <button class="nav-btn" id="prev" type="button" aria-label="이전 사이트">‹</button>
         <div class="stage-title"><span id="stageNo"></span><strong id="stageName"></strong><em id="stageCat"></em></div>
-        <button class="nav-btn" id="next" type="button" aria-label="다음 카탈로그">›</button>
+        <button class="nav-btn" id="next" type="button" aria-label="다음 사이트">›</button>
       </div>
       <div class="stage" id="stage">
         <div class="frame" id="frameWrap">
           <iframe id="frame" title="선택한 분양사이트 미리보기"></iframe>
         </div>
-        <div class="pending" id="pending" hidden>
-          <p class="pending-badge">자료 대기</p>
-          <h2 id="pendingName"></h2>
-          <p>이 카탈로그는 아직 원본 파일을 받지 못해 제작 전입니다.</p>
-          <p class="pending-src" id="pendingSrc"></p>
-        </div>
       </div>
     </main>
   </div>
-  <script type="module" src="/src/intro.js"></script>
+  <script src="assets/sites-data.js"></script>
+  <script src="assets/portfolio.js"></script>
 </body>
 </html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>카탈로그 원본 보기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: #0e0e0e; color: #eee; font-family: Pretendard, sans-serif; }
+    .v { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; }
+    .v-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #262626; font-size: 14px; }
+    .v-head a { color: #d9b77e; text-decoration: none; font-size: 13px; }
+    .v-page { position: relative; display: grid; place-items: center; min-height: 0; padding: 16px 56px; }
+    .v-page img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 10px 40px rgb(0 0 0 / 0.6); }
+    .v-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; border: 1px solid #333; background: #1a1a1a; color: #eee; font-size: 22px; cursor: pointer; }
+    .v-nav:disabled { opacity: 0.3; cursor: default; }
+    .v-prev { left: 8px; } .v-next { right: 8px; }
+    .v-thumbs { display: flex; gap: 6px; overflow-x: auto; padding: 8px 12px; border-top: 1px solid #262626; }
+    .v-thumbs button { flex: 0 0 auto; border: 2px solid transparent; padding: 0; background: none; cursor: pointer; opacity: 0.55; }
+    .v-thumbs button[aria-current='true'] { border-color: #d9b77e; opacity: 1; }
+    .v-thumbs img { display: block; height: 54px; }
+  </style>
+</head>
+<body>
+  <div class="v">
+    <div class="v-head"><strong id="title">카탈로그 원본</strong><span id="pageNo"></span><a id="siteLink" href="#">분양사이트 보기 →</a></div>
+    <div class="v-page">
+      <button class="v-nav v-prev" id="prev" type="button" aria-label="이전 페이지">‹</button>
+      <img id="img" alt="" />
+      <button class="v-nav v-next" id="next" type="button" aria-label="다음 페이지">›</button>
+    </div>
+    <div class="v-thumbs" id="thumbs" aria-label="페이지 목록"></div>
+  </div>
+  <script src="assets/sites-data.js"></script>
+  <script>
+    (function () {
+      var m = location.search.match(/site=([^&]+)/);
+      var slug = m ? decodeURIComponent(m[1]) : '';
+      var s = (window.SITES || []).filter(function (x) { return x.slug === slug; })[0];
+      var img = document.getElementById('img');
+      var thumbs = document.getElementById('thumbs');
+      if (!s) { document.querySelector('.v-page').innerHTML = '<p>카탈로그를 찾을 수 없습니다.</p>'; return; }
+      document.getElementById('title').textContent = s.name + ' · 카탈로그 원본';
+      document.title = s.name + ' · 카탈로그 원본';
+      document.getElementById('siteLink').href = 'sites/' + s.slug + '/index.html';
+      var total = s.catalogPages, cur = 1;
+      function src(n) { var p = String(n); while (p.length < (total >= 100 ? 3 : 2)) p = '0' + p; return 'catalogs/' + s.slug + '/p-' + p + '.jpg'; }
+      var html = '';
+      for (var i = 1; i <= total; i++) html += '<button type="button" data-n="' + i + '" aria-label="' + i + '쪽"><img src="' + src(i) + '" alt="" loading="lazy"></button>';
+      thumbs.innerHTML = html;
+      function show(n) {
+        cur = Math.min(Math.max(1, n), total);
+        img.src = src(cur);
+        img.alt = s.name + ' 카탈로그 ' + cur + '쪽';
+        document.getElementById('pageNo').textContent = cur + ' / ' + total;
+        document.getElementById('prev').disabled = cur === 1;
+        document.getElementById('next').disabled = cur === total;
+        thumbs.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-current', String(Number(b.dataset.n) === cur)); });
+      }
+      document.getElementById('prev').onclick = function () { show(cur - 1); };
+      document.getElementById('next').onclick = function () { show(cur + 1); };
+      thumbs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(Number(b.dataset.n)); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') show(cur + 1); if (e.key === 'ArrowLeft') show(cur - 1); });
+      show(1);
+    })();
+  </script>
+</body>
+</html>
