@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>분양 상담신청 | 호반써밋 브룩사이드</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+KR:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">본문 바로가기</a>
+  <header class="head is-scrolled" id="head">
+    <div class="wrap">
+      <a class="logo" href="./index.html" aria-label="호반써밋 브룩사이드 홈"><span class="l1">HOBAN</span><span class="l2">SUMMIT</span><span class="l3">BROOKSIDE</span></a>
+      <nav class="gnb" id="gnb" aria-label="주 메뉴">
+        <ul>
+          <li><a href="./index.html#intro">INTRO</a></li>
+          <li><a href="./index.html#location">LOCATION</a></li>
+          <li><a href="./index.html#design">DESIGN</a></li>
+          <li><a href="./index.html#community">COMMUNITY</a></li>
+          <li><a href="./index.html#unit">UNIT PLAN</a></li>
+          <li><a href="./index.html#info">INFORMATION</a></li>
+          <li><a href="./apply.html" aria-current="true">APPLY</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuBtn" type="button" aria-controls="gnb" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main" class="apply-page">
+    <section class="apply-hero">
+      <div class="tx">
+        <p class="label">HOBAN SUMMIT BROOKSIDE</p>
+        <h1 class="serif-h" style="margin-top:24px">분양 <em>상담신청</em></h1>
+        <p class="lead">관심 주택형과 연락처를 남겨주시면<br />담당자가 분양 정보를 안내해 드립니다.</p>
+      </div>
+      <div class="ph" role="img" aria-label="호반써밋 견본주택 라운지"></div>
+    </section>
+
+    <div class="wrap apply-wrap">
+      <form class="form" data-apply data-site="hoban-summit-cjdn" novalidate>
+        <h2>고객 등록 <small><em>*</em> 필수 입력</small></h2>
+        <div class="f-grid">
+          <div class="f-item"><label for="name">성함<span class="req">*</span></label><input class="inp" id="name" name="name" autocomplete="name" required minlength="2" maxlength="30" placeholder="홍길동" /></div>
+          <div class="f-item"><label for="phone">휴대폰<span class="req">*</span></label><input class="inp" id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required pattern="01[016789]-?\d{3,4}-?\d{4}" placeholder="010-0000-0000" /></div>
+          <div class="f-item full">
+            <span class="lb" id="lbType">관심 주택형<span class="req">*</span></span>
+            <div class="types" role="radiogroup" aria-labelledby="lbType">
+              <label><input type="radio" name="interest" value="74A" required checked /><span style="background:var(--hb-74a)">74㎡ A<small>351세대</small></span></label>
+              <label><input type="radio" name="interest" value="74B" /><span style="background:var(--hb-74b)">74㎡ B<small>48세대</small></span></label>
+              <label><input type="radio" name="interest" value="84" /><span style="background:var(--hb-84)">84㎡<small>816세대</small></span></label>
+            </div>
+          </div>
+          <div class="f-item"><label for="supply">청약 유형</label>
+            <select class="inp" id="supply" name="청약 유형">
+              <option value="">선택</option><option>일반공급 1순위</option><option>일반공급 2순위</option><option>특별공급 - 기관추천</option><option>특별공급 - 다자녀가구</option><option>특별공급 - 신혼부부</option><option>특별공급 - 노부모부양</option><option>특별공급 - 생애최초</option><option>미정 · 상담 희망</option>
+            </select></div>
+          <div class="f-item"><label for="region">거주 지역</label>
+            <select class="inp" id="region" name="거주 지역"><option value="">선택</option><option>청주시 (해당지역)</option><option>충청북도 기타</option><option>기타 지역</option></select></div>
+          <div class="f-item"><label for="visit">견본주택 방문 희망일</label><input class="inp" id="visit" name="방문 희망일" type="date" /></div>
+          <div class="f-item"><label for="time">연락 희망 시간</label>
+            <select class="inp" id="time" name="연락 희망 시간"><option value="">무관</option><option>오전 (10~12시)</option><option>오후 (13~17시)</option><option>저녁 (17시 이후)</option></select></div>
+          <div class="f-item full"><label for="memo">문의 내용</label><textarea class="inp" id="memo" name="문의 내용" maxlength="1000" placeholder="궁금하신 점을 남겨주세요."></textarea></div>
+        </div>
+        <div class="consent">
+          <h3>개인정보 수집·이용 안내 <span class="draft">초안 · 담당자 확정 필요</span></h3>
+          <ul>
+            <li>수집 항목 : 성함, 휴대폰, 관심 주택형, 청약 유형, 거주 지역, 방문 희망일, 연락 희망 시간, 문의 내용</li>
+            <li>수집 목적 : 분양 상담 및 분양 정보 안내</li>
+            <li>보유 기간 : 미확정 (담당자 확정 후 기재)</li>
+          </ul>
+          <label class="check"><input type="checkbox" name="consent" required /> 개인정보 수집·이용에 동의합니다.<span class="req">*</span></label>
+        </div>
+        <button class="btn btn-terra submit" type="submit">상담 신청하기 <span class="arr"></span></button>
+        <p class="apply-msg" data-apply-msg role="status" aria-live="polite"></p>
+      </form>
+
+      <aside class="side">
+        <div class="side-card">
+          <img src="./assets/cg-sunset.jpg" alt="호반써밋 브룩사이드 투시도" loading="lazy" />
+          <h3>사업개요</h3>
+          <dl>
+            <dt>공급위치</dt><dd>충청북도 청주시 동남택지개발지구 B-8BL</dd>
+            <dt>공급규모</dt><dd>지하2층~지상25층 14개동 1,215세대</dd>
+            <dt>입주시기</dt><dd>2023년 07월 예정</dd>
+          </dl>
+        </div>
+        <div class="side-card">
+          <h3>견본주택</h3>
+          <dl><dt>위치</dt><dd>충청북도 청주시 서원구 분평동 332번지</dd><dt>대표전화</dt><dd>미확인 (카탈로그 미기재)</dd></dl>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="foot"><div class="wrap"><p class="note">※ 본 사이트는 호반써밋 브룩사이드 e-카달로그를 바탕으로 제작한 테스트용 분양사이트입니다.</p></div></footer>
+  <script type="module" src="./js/main.js"></script>
+  <script type="module" src="../../shared/apply.js"></script>
+</body>
+</html>

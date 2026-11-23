@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>관심고객 등록 | 아크메르 동탄</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">본문 바로가기</a>
+  <header class="head is-scrolled" id="head">
+    <div class="wrap">
+      <a class="logo" href="./index.html" aria-label="아크메르 동탄 홈"><span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><b>ACMER<small>DONGTAN</small></b></a>
+      <nav class="gnb" id="gnb" aria-label="주 메뉴">
+        <ul>
+          <li><a href="./index.html#history">HISTORY</a></li>
+          <li><a href="./index.html#nature">NATURE</a></li>
+          <li><a href="./index.html#traffic">TRAFFIC</a></li>
+          <li><a href="./index.html#landmark">LANDMARK</a></li>
+          <li><a href="./index.html#location">LOCATION</a></li>
+          <li><a href="./apply.html" aria-current="true">관심고객 등록</a></li>
+        </ul>
+      </nav>
+      <a class="head-tel" href="tel:15881808">1588.1808</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-controls="gnb" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main" class="apply-page">
+    <div class="apply-grid">
+      <div class="apply-art">
+        <img src="./assets/cover.jpg" alt="" />
+        <p class="logo white" aria-hidden="true"><span class="bars"><i></i><i></i><i></i><i></i><i></i></span><b>ACMER<small>DONGTAN</small></b></p>
+        <p>2026. 9월 오픈예정 · 1588.1808</p>
+      </div>
+      <div class="apply-form">
+        <div class="ch-head">
+          <h2>관심고객 <span class="r"></span><span><big>등록</big></span></h2>
+        </div>
+        <form class="form" data-apply data-site="thesharp-dongtan-acmer" novalidate>
+          <div class="f-grid">
+            <div class="f-item"><label for="name">성함<span class="req">*</span></label><input class="inp" id="name" name="name" autocomplete="name" required minlength="2" maxlength="30" /></div>
+            <div class="f-item"><label for="phone">휴대폰<span class="req">*</span></label><input class="inp" id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required pattern="01[016789]-?\d{3,4}-?\d{4}" placeholder="010-0000-0000" /></div>
+            <div class="f-item full"><span class="lb" id="lbSize">관심 면적 (전용)<span class="req">*</span></span>
+              <div class="sizes" role="radiogroup" aria-labelledby="lbSize">
+                <label><input type="radio" name="interest" value="84㎡대" required checked /><span>84㎡대</span></label>
+                <label><input type="radio" name="interest" value="100㎡대" /><span>100㎡대</span></label>
+                <label><input type="radio" name="interest" value="120~188㎡ 대형" /><span>120~188㎡<br />대형</span></label>
+                <label><input type="radio" name="interest" value="미정" /><span>미정</span></label>
+              </div>
+              <small style="color:var(--ac-mute);font-size:12px">※ 리플렛에는 전용 84~188㎡만 기재되어 있어 세부 타입은 확정 전입니다.</small>
+            </div>
+            <div class="f-item"><label for="region">거주 지역</label><select class="inp" id="region" name="거주 지역"><option value="">선택</option><option>화성시(동탄)</option><option>경기 기타</option><option>서울</option><option>기타 지역</option></select></div>
+            <div class="f-item"><label for="route">알게 된 경로</label><select class="inp" id="route" name="알게 된 경로"><option value="">선택</option><option>카카오톡 채널</option><option>리플렛</option><option>지인 소개</option><option>인터넷 검색</option><option>기타</option></select></div>
+            <div class="f-item full"><label for="memo">문의 내용</label><textarea class="inp" id="memo" name="문의 내용" maxlength="1000"></textarea></div>
+          </div>
+          <div class="consent">
+            <h3>개인정보 수집·이용 안내 <span class="draft">초안 · 담당자 확정 필요</span></h3>
+            <ul><li>수집 항목 : 성함, 휴대폰, 관심 면적, 거주 지역, 알게 된 경로, 문의 내용</li><li>수집 목적 : 분양 일정·이벤트 안내</li><li>보유 기간 : 미확정 (담당자 확정 후 기재)</li></ul>
+            <label class="check"><input type="checkbox" name="consent" required /> 개인정보 수집·이용에 동의합니다.<span class="req">*</span></label>
+          </div>
+          <button class="btn btn-brown submit" type="submit">관심고객 등록하기</button>
+          <p class="apply-msg" data-apply-msg role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="../../shared/site.js"></script>
+  <script type="module" src="../../shared/apply.js"></script>
+</body>
+</html>

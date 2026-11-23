@@ -1,0 +1,105 @@
+{
+  "_comment": "포트폴리오 레지스트리. 인트로·카탈로그 뷰어·신청 API가 모두 이 목록을 읽는다. 새 카탈로그를 추가하면 여기부터 등록한다(CLAUDE.md 감시 규칙 C1).",
+  "sites": [
+    {
+      "slug": "gongdeok-harrington",
+      "name": "공덕역 효성해링턴 스퀘어",
+      "nameEn": "Harrington Square",
+      "category": "복합시설 임대 (호텔·오피스·상가·컨벤션)",
+      "brand": "효성 해링턴",
+      "source": "공덕해링턴스퀘어카다록_20160119.pdf",
+      "catalogPages": 14,
+      "catalogRatio": "1.414",
+      "theme": {
+        "primary": "#422C91",
+        "bg": "#231F20"
+      },
+      "status": "done"
+    },
+    {
+      "slug": "hoban-summit-cjdn",
+      "name": "호반써밋 브룩사이드",
+      "nameEn": "HOBAN SUMMIT BROOKSIDE",
+      "category": "공동주택 분양 (청주 동남지구 B8블록 · 1,215세대)",
+      "brand": "호반써밋",
+      "source": "https://vertium.hobanapt.co.kr/hobansummit-cjdn/final/e_book/",
+      "catalogPages": 24,
+      "status": "done",
+      "catalogRatio": "0.744",
+      "theme": {
+        "primary": "#CA6F5C",
+        "bg": "#F1EFF2"
+      }
+    },
+    {
+      "slug": "thesharp-geomdan-lakepark",
+      "name": "더샵 검단레이크파크",
+      "nameEn": "THE SHARP",
+      "category": "공동주택 분양 (인천 검단신도시 · 2,857세대)",
+      "brand": "더샵",
+      "source": "0528_더샵검단레이크파크_리플렛2차_확인용.pdf",
+      "catalogPages": 2,
+      "status": "done",
+      "theme": {
+        "primary": "#161D37",
+        "bg": "#E4E4E4"
+      }
+    },
+    {
+      "slug": "thesharp-dongtan-acmer",
+      "name": "아크메르 동탄 (더샵)",
+      "nameEn": "ACMER DONGTAN",
+      "category": "공동주택 분양 (동탄 · 최고 49층 1,808세대)",
+      "brand": "더샵",
+      "source": "0719 더샵동탄아크메르 - 리플렛 시안 A .pdf",
+      "catalogPages": 8,
+      "status": "done",
+      "theme": {
+        "primary": "#6E553F",
+        "bg": "#F9F5EA"
+      }
+    },
+    {
+      "slug": "baekseok-signature-xi",
+      "name": "백석시그니처자이",
+      "nameEn": "Xi",
+      "category": "공동주택 분양 (천안 백석 · 1,174세대)",
+      "brand": "자이",
+      "source": "260604_백석시그니처자이_카탈로그_시안.pdf",
+      "catalogPages": 22,
+      "status": "done",
+      "theme": {
+        "primary": "#06263A",
+        "bg": "#EFEBE4"
+      }
+    },
+    {
+      "slug": "catalog-20260914",
+      "name": "연제갤러리자이",
+      "nameEn": "Xi",
+      "category": "공동주택 분양 (부산 연제 · 499세대 · 검토본)",
+      "brand": "자이",
+      "source": "2026.09.14 카달로그_검토.pdf",
+      "catalogPages": 16,
+      "status": "done",
+      "theme": {
+        "primary": "#06263A",
+        "bg": "#D5D0CA"
+      }
+    },
+    {
+      "slug": "gumi-desian",
+      "name": "구미 파크원 데시앙",
+      "nameEn": "GUMI PARK ONE",
+      "category": "공동주택 분양 (구미 · 2,648세대 중 1단지 1,355세대)",
+      "brand": "데시앙",
+      "source": "261014_구미데시앙_리플렛_확인용.pdf",
+      "catalogPages": 2,
+      "status": "done",
+      "theme": {
+        "primary": "#A3245E",
+        "bg": "#EFE8E0"
+      }
+    }
+  ]
+}
