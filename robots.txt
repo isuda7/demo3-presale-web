@@ -1,0 +1,19 @@
+# 데모 사이트 — 검색·AI 노출 차단
+# 검색엔진은 접근을 허용해야 noindex 표시를 읽고 색인에서 뺀다. 그래서 전체 차단(Disallow: /)을 하지 않는다.
+User-agent: *
+Allow: /
+
+# AI 학습·검색·답변 크롤러는 접근 자체를 차단한다
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Bytespider
+Disallow: /
